@@ -40,7 +40,7 @@ app = FastAPI(title="Campaigns Mock API")
 # Allow local frontend to talk to this API
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
+    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000","https://campaign-analytics-dashboard-kbbj.vercel.app/"],
     allow_methods=["GET"],
     allow_headers=["*"],
 )
