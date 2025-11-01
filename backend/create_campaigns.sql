@@ -1,4 +1,3 @@
--- Create campaigns table and insert 10 sample rows
 PRAGMA foreign_keys = OFF;
 BEGIN TRANSACTION;
 
@@ -11,7 +10,7 @@ CREATE TABLE IF NOT EXISTS campaigns (
     impressions INTEGER NOT NULL DEFAULT 0
 );
 
-DELETE FROM campaigns; -- make idempotent for demo
+DELETE FROM campaigns;
 
 INSERT INTO campaigns (id, name, status, clicks, cost, impressions) VALUES
 (1, 'Summer Sale', 'Active', 150, 45.99, 1000),
