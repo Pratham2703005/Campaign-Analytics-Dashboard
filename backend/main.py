@@ -37,11 +37,17 @@ def init_db():
 
 app = FastAPI(title="Campaigns Mock API")
 
-# Allow local frontend to talk to this API
+# Allow local frontend and production Vercel deployments to talk to this API
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000","https://campaign-analytics-dashboard-kbbj.vercel.app/"],
-    allow_methods=["GET"],
+    allow_origins=[
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "https://campaign-analytics-dashboard-kbbj.vercel.app",
+        "https://*.vercel.app",  # Allow all Vercel preview deployments
+    ],
+    allow_credentials=True,
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
 )
 
