@@ -1,0 +1,4 @@
+fastapi
+uvicorn[standard]
+# Use Pydantic v2 which is compatible with FastAPI 0.99
+pydantic
