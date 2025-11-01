@@ -9,7 +9,7 @@ type Campaign = {
   impressions: number;
 };
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "https://campaign-analytics-dashboard-production-36f4.up.railway.app";
 
 export default function CampaignsClient() {
   const [campaigns, setCampaigns] = useState<Campaign[]>([]);
